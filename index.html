@@ -113,7 +113,40 @@
     <option value="28">Bicutan</option>
   </select>
 
+<div class="container">
+<select class="form-select" id="discount">
+                <option value="1">Regular</option>
+                <option value="0.8">PWD/SC/STUDENT (20% Off)</option>
+            </select>
+    
+            <br>
+            <button  class="btn btn-outline-light btn-lg" type="button" onclick="check_discount()">FINAL RATE</button>
+        </form>
+    </div>
+   
 
+
+<hr>
+
+    
+    <script>
+        function check_discount() {
+            var fare1 = Number(document.getElementById('from1').value);
+            var fare2 = Number(document.getElementById('to2').value);
+            var discount = Number(document.getElementById('discount').value);
+    
+            if (fare1 === 0 || fare2 === 0) {
+                alert("Please select valid stations.");
+                return;
+            }
+    
+            var totalFare = fare1 + fare2;
+            var discountedFare = totalFare * discount;
+    
+            alert("Your final fare is PHP " + discountedFare.toFixed(2));
+        }
+    </script>
+    </div>
     
 <br>
 <br>
